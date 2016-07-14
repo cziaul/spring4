@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import guru.springframework.services.HelloWorldService;
+import guru.springframework.services.HelloWorldServiceEnglishImpl;
+import guru.springframework.services.HelloWorldSpanishImpl;
 
 @Configuration
 public class HelloConfig {
@@ -12,13 +14,13 @@ public class HelloConfig {
 	@Bean
 	@Profile("english")
 	public HelloWorldService helloWorldServiceEnglish(){
-		return HelloWorldServiceEnglishImpl();
+		return new HelloWorldServiceEnglishImpl();
 	}
 	
 	@Bean
 	@Profile("spanish")
 	public HelloWorldService helloWorldServiceSpanish(){
-		return HelloWorldSpanishImpl();
+		return new HelloWorldSpanishImpl();
 	}
 	
 
