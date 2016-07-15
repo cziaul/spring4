@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webflow-project-description>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.0.201606301005-RELEASE]]></pluginVersion>
+	<configs>
+		<config>
+			<file>src/main/resources/spring/test.xml</file>
+			<name><![CDATA[test]]></name>
+			<beans-config><![CDATA[1:BeansModel|2:l22_XMLConfiguration|3:java:springboot.DependencyinjectionApplication]]></beans-config>
+		</config>
+	</configs>
+</webflow-project-description>
