@@ -1,9 +1,5 @@
 package guru.springframework.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
-
 import guru.springframework.services.HelloWorldService;
 
 //@Controller -> added <bean id="greetingController" class="guru.springframework.controller.GreetingController"></bean> in config file
@@ -16,21 +12,21 @@ public class GreetingController {
 	
 	
 	//This is injected by type
-	@Autowired
+	//@Autowired
 	public void setHelloWorldService(HelloWorldService helloWorldService) {
 		this.helloWorldService = helloWorldService;
 	}
 	
 	//Injected by name
-	@Autowired
-	@Qualifier("helloWorldServiceGerman")
+	//@Autowired
+	//@Qualifier("helloWorldServiceGerman")
 	public void setHelloWorldServiceGerman(HelloWorldService helloWorldServiceGerman) {
 		this.helloWorldServiceGerman = helloWorldServiceGerman;
 	}
 
 	//Injected by name
-	@Autowired
-	@Qualifier("french")
+	//@Autowired
+	//@Qualifier("french")
 	public void setHelloWorldFrenchService(HelloWorldService helloWorldFrenchService) {
 		this.helloWorldFrenchService = helloWorldFrenchService;
 	}
@@ -42,6 +38,5 @@ public class GreetingController {
 		System.out.println(helloWorldServiceGerman.getGreeting());
 		return greeting;
 	}
-
 	
 }

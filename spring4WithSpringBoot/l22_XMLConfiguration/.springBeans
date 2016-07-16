@@ -9,6 +9,8 @@
 	<configs>
 		<config>java:springboot.DependencyinjectionApplication</config>
 		<config>src/main/resources/spring/spring-config.xml</config>
+		<config>src/main/resources/spring/helloworld-config.xml</config>
+		<config>src/main/resources/spring/english-hello-world.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

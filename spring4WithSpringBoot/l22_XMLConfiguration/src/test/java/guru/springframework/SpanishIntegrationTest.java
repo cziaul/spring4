@@ -1,19 +1,26 @@
 package guru.springframework;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import springboot.DependencyinjectionApplication;
+import guru.springframework.services.HelloWorldService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations ={"classpath:/spring/helloworld-config.xml", "classpath*:/spring/english-hello-world.xml"})
-public class DependencyinjectionApplicationTests {
 
+public class SpanishIntegrationTest {
+	@Autowired
+	HelloWorldService helloWorldService;
+	
 	@Test
-	public void contextLoads() {
+	public void testHelloWorld(){
+		String greeting = helloWorldService.getGreeting();
+		assertEquals("Hello World!!!", greeting);
 	}
 
 }

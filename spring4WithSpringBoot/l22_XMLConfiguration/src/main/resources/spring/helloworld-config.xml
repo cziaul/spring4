@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+		<!-- Replace method id HelloConfig -->
+
+		<bean id="helloWorldFactory" class="guru.springframework.services.HelloWorldFactory"/>
+		
+			<!-- -->
+			<bean id="french" factory-bean="helloWorldFactory" factory-method="createHellowWorldService">
+				<constructor-arg value="fr"/>
+			</bean>
+			
+			<bean id="helloWorldServiceGerman" factory-bean="helloWorldFactory" factory-method="createHellowWorldService">
+				<constructor-arg value="de"/>
+			</bean>
+			
+			<bean id="helloWorldServicePolish" factory-bean="helloWorldFactory" factory-method="createHellowWorldService">
+				<constructor-arg value="pl"/>
+			</bean>
+			<bean id="helloWorldServiceRussian" factory-bean="helloWorldFactory" factory-method="createHellowWorldService">
+				<constructor-arg value="ru"/>
+		</bean>
+		
+		<beans profile="english">
+			<import resource="classpath:spring/english-hello-world.xml"/>
+		</beans>
+	
+		<beans profile="spanish">
+			<import resource="classpath:spring/spanish-hello-world.xml"/>
+		</beans>
+</beans>
