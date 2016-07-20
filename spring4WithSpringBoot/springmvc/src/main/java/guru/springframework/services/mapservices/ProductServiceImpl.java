@@ -1,63 +1,47 @@
-package guru.springframework.services;
+package guru.springframework.services.mapservices;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.management.RuntimeErrorException;
-
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import guru.springframework.domain.DomainObject;
 import guru.springframework.domain.Product;
+import guru.springframework.services.ProductService;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+@Profile("map")
+public class ProductServiceImpl extends AbstractMapService implements ProductService {
 	
-	private Map<Integer, Product> products;
-	
-	public ProductServiceImpl(){
-		loadProducts();
+
+	@Override
+	public List<DomainObject> listAll() {
+		return super.listAll();
 	}
 
 	@Override
-	public List<Product> listAllProducts() {
-		return new ArrayList<>(products.values());
-	}
-
-	@Override
-	public Product getProductById(Integer id) {
-		return products.get(id);
+	public Product getById(Integer id) {
+		return (Product) super.getById(id);
 	}
 	
 	@Override
-	public Product saveOrUpdateProduct(Product product) {
-		if(product != null){
-			if (product.getId() == null){
-				product.setId(getNextKey());
-			}
-			products.put(product.getId(), product);
-			return product;
-		}else {
-			throw new RuntimeException("Product Can't be null");
-		}
+	public Product saveOrUpdate(Product domainObject) {
+		return (Product) super.saveOrUpdate(domainObject);
 	}
 
-	private Integer getNextKey(){
-		return Collections.max(products.keySet())+1;
-	}
 
 	@Override
-	public void deleteProduct(Integer id) {
-		products.remove(id);
+	public void delete(Integer id) {
+		super.delete(id);
 		
 	}
 
 	
 	
-	private void loadProducts(){
+	/*private void loadProducts(){
 		products = new HashMap<>();
 		
 		Product product1= new Product();
@@ -95,8 +79,6 @@ public class ProductServiceImpl implements ProductService {
 		product5.setImageUrl("http://example.com/product4");
 		products.put(5, product5);
 
-	}
-
-	
+	}*/
 
 }

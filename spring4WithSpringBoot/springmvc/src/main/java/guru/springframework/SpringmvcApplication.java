@@ -8,12 +8,15 @@ import org.springframework.context.ApplicationContext;
 public class SpringmvcApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(SpringmvcApplication.class, args);
+		SpringApplication.run(SpringmvcApplication.class, args);
+		
+		
+		/*ApplicationContext ctx = SpringApplication.run(SpringmvcApplication.class, args);
 		System.out.println("Beans ****");
 		System.out.println(ctx.getBeanDefinitionCount());
 		for (String name : ctx.getBeanDefinitionNames()){
 			System.out.println(name);	
-		}
+		}*/
 		
 	}
 }

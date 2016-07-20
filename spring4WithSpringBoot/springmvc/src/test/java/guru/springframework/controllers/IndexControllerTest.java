@@ -1,6 +1,7 @@
 package guru.springframework.controllers;
 
 import org.junit.Before;
+import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -22,4 +23,5 @@ public class IndexControllerTest {
 			.andExpect(view().name("index"));
 	}*/
 
+	
 }
