@@ -26,7 +26,7 @@ public class ProductServiceJpaDaoImplTest {
 	
 	@Test
 	public void testListMethod() throws Exception{
-		List<Product> products = productService.listAllProducts();
+		List<Product> products = (List<Product>) productService.listAll();
 		System.out.println("Product Size is "+products.size());
 		assert products.size()==4 ;
 	}

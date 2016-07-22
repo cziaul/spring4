@@ -45,15 +45,21 @@ public class CustomerServiceJPADaoImpl extends AbstructJpaDaoService implements 
 		em.getTransaction().begin();
 		
 		if (domainObject.getUser() != null && domainObject.getUser().getPassword()!= null){
-			domainObject.getUser().setEncryptedPassword(encryptionService.encryptString(domainObject.getUser().getPassword()));
+			domainObject.getUser().setEncryptedPassword(
+					encryptionService.encryptString(domainObject.getUser().getPassword()));
 		}
 		Customer saveCustomer = em.merge(domainObject);
+		em.getTransaction().commit();
 		return saveCustomer;
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.remove(em.find(Customer.class, id));
+		em.getTransaction().commit();
+		
 
 	}
 

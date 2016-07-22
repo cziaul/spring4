@@ -13,7 +13,7 @@ public class Customer implements DomainObject{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer Id;
+	private Integer id;
 	
 	@Version
 	private Integer version;
@@ -122,13 +122,12 @@ public class Customer implements DomainObject{
 
 	@Override
 	public Integer getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	@Override
 	public void setId(Integer id) {
-		// TODO Auto-generated method stub
+		this.id= id;
 		
 	}
 	

@@ -1,0 +1,61 @@
+
+Adding external jar to maven
+-----------------------------
+C:\Users\cziau_jdqllc2>mvn install:install-file -Dfile=C:\install\maven_external_jars\ojdbc7.jar -DgroupId=com.oracle -DartifactId=oracledb -Dversion=11.2.0.2 -Dpackaging=jar
+
+Result
+-----
+
+[INFO] Scanning for projects...
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom (7 KB at 11.7 KB/sec)
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install-file (default-cli) @ standalone-pom ---
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom (3 KB at 18.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 112.9 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom (2 KB at 7.2 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom (5 KB at 36.3 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom (8 KB at 57.4 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom (8 KB at 55.8 KB/sec)
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar
+Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar (12 KB at 29.8 KB/sec)
+Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar (226 KB at 539.7 KB/sec)
+[INFO] Installing C:\install\maven_external_jars\ojdbc7.jar to C:\Users\cziau_jdqllc2\.m2\repository\com\oracle\oracledb\11.2.0.2\oracledb-11.2.0.2.jar
+[INFO] Installing C:\Users\CZIAU_~1\AppData\Local\Temp\mvninstall2491686560806661865.pom to C:\Users\cziau_jdqllc2\.m2\repository\com\oracle\oracledb\11.2.0.2\oracledb-11.2.0.2.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.664 s
+[INFO] Finished at: 2016-07-21T23:03:47-05:00
+[INFO] Final Memory: 9M/296M
+[INFO] ------------------------------------------------------------------------
+
+
+Example
+
+mvn install:install-file -Dfile=matlabcontrol-4.1.0.jar -DgroupId=org.matlabcontrol \
+    -DartifactId=matlabcontrol -Dversion=4.1.0 -Dpackaging=jar
+
+If you do that, you can access your jar file with dependency, like:
+
+ <dependency>
+        <groupId>org.matlabcontrol</groupId>
+        <artifactId>matlabcontrol</artifactId>
+        <version>4.1.0</version>
+ </dependency>
+ 
+ 
+ 
+ 
+
