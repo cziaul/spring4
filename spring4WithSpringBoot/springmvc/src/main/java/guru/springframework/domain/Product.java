@@ -15,6 +15,7 @@ public class Product implements DomainObject {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
+	//For optimistic locking
 	@Version
 	private Integer version;
 	
@@ -22,10 +23,7 @@ public class Product implements DomainObject {
 	private String description;
 	private BigDecimal price;
 	private String imageUrl;
-	//For optimistic locking
-	
-	
-	
+
 	public Integer getVersion() {
 		return version;
 	}

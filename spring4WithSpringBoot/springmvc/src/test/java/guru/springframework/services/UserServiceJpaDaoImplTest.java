@@ -8,6 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import guru.springframework.config.JpaIntegrationConfig;
+import guru.springframework.domain.Customer;
 import guru.springframework.domain.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,13 +29,27 @@ public class UserServiceJpaDaoImplTest {
 		user.setUsername("someuser");
 		user.setPassword("myPassword");
 		
+		//Adding Customer Object
+		
+		Customer customer = new Customer();
+		customer.setFirstName("Zia");
+		customer.setLastName("Chowdhury");
+		user.setCustomer(customer);
+		
+		//Had to change to Users since user is protected in oracle db.
+		
 		Users savedUser = userService.saveOrUpdate(user);
 		
 		assert savedUser.getId() != null;
-		assert savedUser.getPassword() != null;
+		assert savedUser.getVersion() != null;
+		assert savedUser.getCustomer() != null;
+		assert savedUser.getCustomer().getId() != null;
 		
+		/*assert savedUser.getPassword() != null;
 		System.out.println("Encrypted Password ");
-		System.out.println(savedUser.getEncryptedPassword());
+		System.out.println(savedUser.getEncryptedPassword());*/
+		
+		
 				
 	}
 	

@@ -14,7 +14,7 @@ import guru.springframework.domain.Product;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(JpaIntegrationConfig.class)
-//@ActiveProfiles("jpa")
+@ActiveProfiles("jpa")
 public class ProductServiceJpaDaoImplTest {
 	
 	private ProductService productService;

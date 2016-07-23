@@ -28,8 +28,8 @@ public class Customer implements DomainObject{
     private String state;
     private String zipCode;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	
+    // (cascade = {CascadeType.ALL}) taking this off since we don't want to delete user that might tie with invoice and orader
+	@OneToOne
 	private Users user;
 	
 	public Integer getVersion() {

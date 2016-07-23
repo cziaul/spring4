@@ -1,9 +1,11 @@
 package guru.springframework.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
@@ -25,6 +27,20 @@ public class Users implements DomainObject {
 	private String encryptedPassword;
 	private Boolean enabled = true;
 	
+	
+	//Injecting Customer to have bi-directional one to one mapping
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	private Customer customer;
+	
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+		//Setting User
+		customer.setUser(this);
+	}
 	@Override
 	public Integer getId() {
 		return id;
