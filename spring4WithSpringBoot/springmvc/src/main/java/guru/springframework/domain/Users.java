@@ -8,7 +8,7 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
-public class User implements DomainObject {
+public class Users implements DomainObject {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

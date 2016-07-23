@@ -2,7 +2,7 @@ package guru.springframework.services;
 
 import guru.springframework.config.JpaIntegrationConfig;
 import guru.springframework.domain.Customer;
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class CustomerServiceJpaDaoImplTest {
     public void testSaveWithUser() {
 
         Customer customer = new Customer();
-        User user = new User();
+        Users user = new Users();
         user.setUsername("This is my user name");
         user.setPassword("MyAwesomePassword");
         customer.setUser(user);

@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import guru.springframework.config.JpaIntegrationConfig;
 import guru.springframework.domain.Customer;
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(JpaIntegrationConfig.class)
@@ -34,7 +34,7 @@ public class CustomerServiceJpaDaoImpleTest {
 	@Test
 	public void testSaveWithUser(){
 		Customer customer = new Customer();
-		User user = new User();
+		Users user = new Users();
 		user.setUsername("This is my user name");
 		user.setPassword("MyAwesomePasswo");
 		customer.setUser(user);

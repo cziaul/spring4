@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.domain.Customer;
+import guru.springframework.domain.Users;
 import guru.springframework.services.CustomerService;
 import guru.springframework.services.security.EncryptionService;
 
@@ -49,6 +50,7 @@ public class CustomerServiceJPADaoImpl extends AbstructJpaDaoService implements 
 					encryptionService.encryptString(domainObject.getUser().getPassword()));
 		}
 		Customer saveCustomer = em.merge(domainObject);
+		
 		em.getTransaction().commit();
 		return saveCustomer;
 	}

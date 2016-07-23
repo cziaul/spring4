@@ -30,7 +30,7 @@ public class Customer implements DomainObject{
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	
-	private User user;
+	private Users user;
 	
 	public Integer getVersion() {
 		return version;
@@ -112,11 +112,11 @@ public class Customer implements DomainObject{
 		this.zipCode = zipCode;
 	}
 
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

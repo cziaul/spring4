@@ -9,7 +9,8 @@ public class CommonBeanConfig {
 	
 	@Bean
 	public StrongPasswordEncryptor strongEncryptor(){
-		return null;
+		StrongPasswordEncryptor encryptor =  new StrongPasswordEncryptor();
+		return encryptor;
 		
 	}
 

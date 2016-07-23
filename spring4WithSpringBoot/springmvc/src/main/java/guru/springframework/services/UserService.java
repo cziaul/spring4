@@ -1,7 +1,7 @@
 package guru.springframework.services;
 
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 
-public interface UserService extends CRUDService<User> {
+public interface UserService extends CRUDService<Users> {
 
 }

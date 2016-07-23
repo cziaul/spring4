@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 import guru.springframework.services.UserService;
 import guru.springframework.services.security.EncryptionService;
 
@@ -26,27 +26,27 @@ public class UserServiceJpaDaoImpl extends AbstructJpaDaoService implements User
 	}
 
 	@Override
-	public List<User> listAll() {
+	public List<Users> listAll() {
 		EntityManager em = emf.createEntityManager();
-		return em.createQuery("from User", User.class).getResultList();
+		return em.createQuery("from User", Users.class).getResultList();
 	}
 
 	@Override
-	public User getById(Integer id) {
+	public Users getById(Integer id) {
 		EntityManager em = emf.createEntityManager();
-		return em.find(User.class, id);
+		return em.find(Users.class, id);
 		
 	}
 
 	@Override
-	public User saveOrUpdate(User domainObject) {
+	public Users saveOrUpdate(Users domainObject) {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
 		if(domainObject.getPassword() != null){
 			domainObject.setEncryptedPassword(encryptionService.encryptString(domainObject.getPassword()));
 		}
-		User saveduser = em.merge(domainObject);
+		Users saveduser = em.merge(domainObject);
 		em.getTransaction().commit();
 		return saveduser;
 	}
@@ -55,7 +55,7 @@ public class UserServiceJpaDaoImpl extends AbstructJpaDaoService implements User
 	public void delete(Integer id) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		em.remove(em.find(User.class, id));
+		em.remove(em.find(Users.class, id));
 		em.getTransaction().commit();
 
 	}

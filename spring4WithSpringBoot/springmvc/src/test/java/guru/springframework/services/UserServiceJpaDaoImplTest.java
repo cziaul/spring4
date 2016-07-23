@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import guru.springframework.config.JpaIntegrationConfig;
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(JpaIntegrationConfig.class)
@@ -24,11 +24,11 @@ public class UserServiceJpaDaoImplTest {
 	
 	@Test
 	public void testSaveOfUser() throws Exception{
-		User user = new User();
+		Users user = new Users();
 		user.setUsername("someuser");
 		user.setPassword("myPassword");
 		
-		User savedUser = userService.saveOrUpdate(user);
+		Users savedUser = userService.saveOrUpdate(user);
 		
 		assert savedUser.getId() != null;
 		assert savedUser.getPassword() != null;

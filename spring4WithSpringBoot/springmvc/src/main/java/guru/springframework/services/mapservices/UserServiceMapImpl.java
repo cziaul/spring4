@@ -3,7 +3,7 @@ package guru.springframework.services.mapservices;
 import java.util.List;
 
 import guru.springframework.domain.DomainObject;
-import guru.springframework.domain.User;
+import guru.springframework.domain.Users;
 import guru.springframework.services.UserService;
 
 public class UserServiceMapImpl extends AbstractMapService implements UserService {
@@ -14,13 +14,13 @@ public class UserServiceMapImpl extends AbstractMapService implements UserServic
     }
 
     @Override
-    public User getById(Integer id) {
-        return (User) super.getById(id);
+    public Users getById(Integer id) {
+        return (Users) super.getById(id);
     }
 
     @Override
-    public User saveOrUpdate(User domainObject) {
-        return (User) super.saveOrUpdate(domainObject);
+    public Users saveOrUpdate(Users domainObject) {
+        return (Users) super.saveOrUpdate(domainObject);
     }
 
     @Override
