@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Version;
 
 @Entity
-public class Product implements DomainObject {
+public class Product extends AbstractDomainClass  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,12 +31,6 @@ public class Product implements DomainObject {
 		this.version = version;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getDescription() {
 		return description;
 	}

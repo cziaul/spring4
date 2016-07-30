@@ -10,7 +10,7 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
-public class Users implements DomainObject {
+public class Users extends AbstractDomainClass  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +32,18 @@ public class Users implements DomainObject {
 	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 	private Customer customer;
 	
+	//if we ever lose relation between User and Cart, then Cart is going be deleted.
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	private Cart cart;
 	
+	
+	
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -41,15 +52,7 @@ public class Users implements DomainObject {
 		//Setting User
 		customer.setUser(this);
 	}
-	@Override
-	public Integer getId() {
-		return id;
-	}
-	@Override
-	public void setId(Integer id) {
-		this.id= id;
-		
-	}
+	
 	public Integer getVersion() {
 		return version;
 	}
