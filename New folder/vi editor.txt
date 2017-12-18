@@ -1,0 +1,107 @@
+vi is a visual editior 
+it is very useful to creat a file or modify the file or delete data the file or cut
+copy or paste substitute
+
+we are having three modes in vi editor
+1,insert mode aAieoO
+2,escape mode
+3,colone mode
+
+
+######################### VI EDITOR COMMANDS ###########################
+                        | 
+                        |--->ESC OR COMMAND MODE
+                        | 
+                        |-->INSERT OR INPUT MODE 
+                        |
+                        |-->COLON OR LASTLINE  COMMAND MODE 
+
+ESC MODE:=  THIS IS A DEFAULT MODE IN VI WHEN FILE IS OPENED.DELETION,YANKNG(COPY),PASTING,REPLACING IS POSSIBLE IN THIS MODE.FOR SWITCHING TO INSERT MODE PRESS ANY ONE OF THESE I,i,A,a,O,o . FOR SWITCHING TO COLON MODE PRESS SHIFT + : .         
+
+INSERT MODE:= IN THIS MODE DATA CAN BE INSERTED.TO COME BACK TO ESC MODE PRESS ESC.
+TO SHIFT FROM INSERT MODE TO COLON MODE WE HAVE TO MOVE THROUGH ESC MODE.
+
+
+COLON MODE:= IN THIS MODE WE CAN DO SUBSTITUTION,SAVE AND QUIT ETC.
+
+#########################--CURSOR RELATED COMMANDS--########################
+							   k
+                                                           |
+l moves cursor one character right side                    |
+h moves cursor one character left side             h ------|-----l
+j moves cursor one record down				   |
+k moves cursor one record up                               |
+$ moves cursor end of the record [of that record]          |
+^ moves cursor start of the record [of that record]        j
+w moves cursor one word forward
+e moves cursor end of the word 
+nw moves cursor n words forward
+b moves cursor one word backward
+nb moves cursor n words backward
+gg moves cursor start of the file
+ngg cursor moves that record
+G moves cursor end of the file
+nG cursor moves that record
+H cursor moves starting of the  screen
+L cursor moves end of the screen
+M cursor moves middle of the screen
+J consecutive lines joined into a single line
+r to replace the cursor position character
+R to replace the cursor position record
+Ctrl+f to move the cursor one page forward
+Ctrl+b to move the cursor one page backward
+
+			--DELETING COMMANDS--
+
+x it deletes cursor position character
+X it deletes before cursor position character
+dd it deletes cursor position record
+dw  deletes one word forward
+db it deletes one word backward
+d$ it deletes cursor position to end of the record
+d^ it deletes cursor position to start of the record
+dG it deletes cursor position to end of the file
+dgg it deletes cursor position to start of the file
+ndd it deletes n records
+
+			--COPYING COMMANDS--
+
+yy it copies cursor position record      
+yw it copies one word forward copies 
+yb it copies one word backward
+y$ it copies cursor position to end of the record
+y^ it copies CURSOR position to start of the record
+ygg it copies CURSOR position to starting of the file
+yG it copies cursor position of end of the file
+nyy it copies n records
+
+   			------PASTING COMMANDS--------
+
+p it pastes below cursor position
+P it pastes above cursor position
+                   
+##########################--INSERTING COMMANDS--################################
+
+a cursor moves next character and it goes to insert mode
+A cursor moves end of the record and it goes to insert mode
+i cursor will be same position and it goes to insert mode
+I cursor moves start of the record and it goes to insert mode
+o it creates new record below cursor position and it goes to insert mode
+O it creates new record above cursor position and it goes to insert mode
+cc it delete cursor position record and it goes to insert mode
+cw it delete cursor position word and it goes to insert mode
+
+###########################----COLON MODE COMMANDS--###########################
+:w (to save) 
+:q (to quit with out saving)
+:wq to quit with saving 
+:q! to quit forcibly   
+:wq! to save and quit forcibly
+:se nu to setting numbers
+:/ word searching
+:se nonu to removing numbers
+:se ic to setting ignore case(while searching)
+:se noic to removing ignore case(while searching)
+:1,$s/unix/linux  to replace unix by linux only first occurence
+:1,$s/unix/linux/g to replace unix by linux globally  
+
