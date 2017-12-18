@@ -1,4 +1,4 @@
-package io.pivotal.education.core_spring.parentCoreSpringProject;
+package accounts;
 
 /**
  * Hello world!

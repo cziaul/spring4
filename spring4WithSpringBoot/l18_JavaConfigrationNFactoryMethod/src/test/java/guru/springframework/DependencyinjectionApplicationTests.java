@@ -14,5 +14,10 @@ public class DependencyinjectionApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void doTest(){
+		
+	}
 
 }
