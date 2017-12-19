@@ -1,0 +1,5 @@
+https://dzone.com/articles/using-yaml-java-application
+
+https://code.google.com/archive/p/yamlbeans/
+
+http://yamlbeans.sourceforge.net/
