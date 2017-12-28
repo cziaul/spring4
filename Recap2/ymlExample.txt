@@ -3,3 +3,80 @@ https://dzone.com/articles/using-yaml-java-application
 https://code.google.com/archive/p/yamlbeans/
 
 http://yamlbeans.sourceforge.net/
+
+http://www.baeldung.com/spring-yaml
+
+
+@Configuration
+@EnableConfigurationProperties
+@ConfigurationProperties("foo")
+@Component
+public class FooProperties {
+	
+	public FooProperties fooProperties;
+	
+	
+	public void setFooProperties(FooProperties fooProperties) {
+		this.fooProperties = fooProperties;
+	}
+	
+	private String name ="Anonymous";
+	private String prefix ="Hello, ";
+	private Badge badge;
+	private Color baseColor;
+	private Map<Color, Short> colorMix;
+	private List<Color> baseColorList;
+	private List<Map<Color, Short>> mixColorList;
+	private List<Badge> badges;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPrefix() {
+		return prefix;
+	}
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+	public Badge getBadge() {
+		return badge;
+	}
+	public void setBadge(Badge badge) {
+		this.badge = badge;
+	}
+	public Color getBaseColor() {
+		return baseColor;
+	}
+	public void setBaseColor(Color baseColor) {
+		this.baseColor = baseColor;
+	}
+	public Map<Color, Short> getColorMix() {
+		return colorMix;
+	}
+	public void setColorMix(Map<Color, Short> colorMix) {
+		this.colorMix = colorMix;
+	}
+	public List<Color> getBaseColorList() {
+		return baseColorList;
+	}
+	public void setBaseColorList(List<Color> baseColorList) {
+		this.baseColorList = baseColorList;
+	}
+	public List<Badge> getBadges() {
+		return badges;
+	}
+	public void setBadges(List<Badge> badges) {
+		this.badges = badges;
+	}
+	
+	public List<Map<Color, Short>> getMixColorList() {
+		return mixColorList;
+	}
+	public void setMixColorList(List<Map<Color, Short>> mixColorList) {
+		this.mixColorList = mixColorList;
+	}	
+
+}
