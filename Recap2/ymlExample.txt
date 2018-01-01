@@ -10,6 +10,8 @@ https://spring.io/blog/2015/05/11/new-in-sts-3-7-0-spring-boot-yaml-editor
 
 https://www.mkyong.com/spring-boot/spring-boot-configurationproperties-example/
 
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
+
 
 @Configuration
 @EnableConfigurationProperties
